@@ -1,0 +1,17 @@
+body {
+  font-family: 14px;
+}
+.MuiPaper-root {
+  .MuiMenuItem-root {
+    font-size: 1vw;
+    padding: 0.25vw 2vw;
+  }
+}
+
+@media (max-width: 420px) {
+  .MuiPaper-root {
+    .MuiMenuItem-root {
+      font-size: 12px;
+    }
+  }
+}

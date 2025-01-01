@@ -1,19 +1,25 @@
-import { memo, useState } from "react";
+import { BrowserRouter } from "react-router";
+// library
+import { Box } from "@mui/material";
+// components
+// store
+// styles
+import "./App.scss";
 
-const App: React.FC = () => {
-  const [counter, setCounter] = useState<number>(0);
-
-  const addNewComponent = (): void => {
-    setCounter((counter) => counter + 1);
-  };
-
+function App() {
+  const appTheme = "dark";
   return (
-    <main>
-      <header>React App Component {counter}</header>
-      <button data-testid="add-component-btn" onClick={addNewComponent}>
-        Add New Component
-      </button>
-    </main>
+    <BrowserRouter>
+      <Box
+        data-testid="app-container"
+        width={"100%"}
+        height={"100%"}
+        data-theme={appTheme}
+      >
+        <div>TaxCalculator</div>
+      </Box>
+    </BrowserRouter>
   );
-};
-export default memo(App);
+}
+
+export default App;

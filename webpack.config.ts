@@ -16,13 +16,16 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
   },
   resolve: {
-    extensions: [".ts", ".tsx",".js",".jsx"],
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
+    alias: {
+      src: path.resolve(__dirname, "src"),
+    },
   },
   devServer: {
     static: path.join(__dirname, "dist"),
