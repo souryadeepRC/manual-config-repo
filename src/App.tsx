@@ -10,9 +10,7 @@ const App: React.FC = () => {
   return (
     <main>
       <header>React App Component {counter}</header>
-      <button data-testid="add-component-btn" onClick={addNewComponent}>
-        Add New Component
-      </button>
+      <button data-testid="add-component-btn" onClick={addNewComponent}> Add New Component           </button>
     </main>
   );
 };
