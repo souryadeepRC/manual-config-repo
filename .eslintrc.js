@@ -5,7 +5,8 @@ module.exports = {
     "plugin:react/recommended", // Use recommended rules for React
     "plugin:@typescript-eslint/recommended", // TypeScript-specific recommended rules
     "plugin:react-hooks/recommended", // Enforce best practices for React hooks
-    /* "prettier", // Disable conflicting rules between ESLint and Prettier */
+    'prettier', // Disable ESLint rules that conflict with Prettier
+    'plugin:prettier/recommended', // Enable Prettier rules as ESLint rules
   ],
   parserOptions: {
     ecmaVersion: 2020, // Allow modern ECMAScript features
