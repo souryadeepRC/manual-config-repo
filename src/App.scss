@@ -1,5 +1,7 @@
+@use "src/styles/variables" as *;
 body {
-  font-family: 14px;
+  font-family: $primary-font-family;
+  font-size: $font-size-non-mobile-primary;
 }
 .MuiPaper-root {
   .MuiMenuItem-root {

@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: "./src/index.tsx",
@@ -16,7 +17,21 @@ module.exports = {
         },
       },
       {
+        test: /\.module\.scss$/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+            },
+          },
+          "sass-loader",
+        ],
+      },
+      {
         test: /\.scss$/,
+        exclude: /\.module\.scss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
@@ -33,6 +48,13 @@ module.exports = {
     port: 9000,
     open: true,
   },
-  plugins: [new HtmlWebpackPlugin({ template: "./public/index.html" })],
+  plugins: [
+    new HtmlWebpackPlugin({ template: "./public/index.html" }),
+    new webpack.DefinePlugin({
+      "process.env.ENVIRONMENT": JSON.stringify(
+        process.env.ENVIRONMENT || "development"
+      ),
+    }),
+  ],
   mode: "development",
 };

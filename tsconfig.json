@@ -11,6 +11,7 @@
     "jsx": "react-jsx",
     "noImplicitAny": true,
     "noUnusedLocals": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
       "src/*": ["src/*"]

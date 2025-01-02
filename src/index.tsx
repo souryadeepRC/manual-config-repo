@@ -1,16 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 // component
-import App from "src/App";
+import App from "./App";
 // style
 import "./index.scss";
-// store
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const rootElement: HTMLElement | null = document.getElementById("root");
+if (rootElement) {
+  const root = ReactDOM.createRoot(rootElement);
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+} else {
+  console.error("Root node not found");
+}
